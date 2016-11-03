@@ -34,6 +34,10 @@ in the top level directory.  It will output example-template.yaml to the dist di
 
 Copy the cloned directory to a new directory for your project.  If you did a regular clone, you will probably need to remove the .git directory and then run git init if you want to keep the project in version control.  Update the first line of gulpfile.js to set the name of the templates that get output in the dist directory.
 
+In the partials directory for the template section you want to edit copy either json.blank or yaml.blank to a descriptive name.  For example, if you want to create a nat instance resource and are using yaml, you might want to name the file natInstance.yaml.  See the partials-example directories for some examples.
+
+After you have completed all of the partials you need, you are ready to build the template.
+
 ### Building your template
 
 Once you have your partials complete, you can build your template by running either
