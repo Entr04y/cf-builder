@@ -6,15 +6,21 @@ Using the included gulp file, gulp will merge either the json or yaml files into
 
 ## Requirements
 
-You will need to have node.js and gulp installed on your development machine.  Once they are installed, you will need to install the gulp-merge-json and gulp-yaml-merge modules via npm.
+You will need to have node.js and gulp installed on your development machine. 
+Once they are installed, you will need to clone this repository to your local machine.
+
+## Setting up your project
+Change to the newly cloned directory and from the top level install gulp, gulp-merge-json and gulp-yaml-merge modules to the local directory via npm.
 
 This can be accomplished by running:
 
 ```
-npm install gulp-merge-json gulp-yaml-merge --save-dev
+npm install gulp gulp-merge-json gulp-yaml-merge --save-dev
 ```
 
-## Building templates
+You are now ready to build the example template.
+
+### Building the example template
 
 To build the example template, run the command 
 
@@ -22,7 +28,13 @@ To build the example template, run the command
 gulp example
 ```
 
-in the top level directory.
+in the top level directory.  It will output example-template.yaml to the dist directory.
+
+## Creating your own templates
+
+Copy the cloned directory to a new directory for your project.  If you did a regular clone, you will probably need to remove the .git directory and then run git init if you want to keep the project in version control.  Update the first line of gulpfile.js to set the name of the templates that get output in the dist directory.
+
+### Building your template
 
 Once you have your partials complete, you can build your template by running either
 
