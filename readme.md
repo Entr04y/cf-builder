@@ -9,6 +9,27 @@ Using the included gulpfile.js, gulp will merge either the json or yaml files in
 You will need to have node.js and gulp installed on your development machine. 
 Once they are installed, you will need to clone this repository to your local machine.
 
+## Known issues
+
+The shorthand version of functions for YAML doesn't work with the gulp merge module.  It interprets the shorthand as a tag (which it is) but it has no knowledge of the cloudformation tags and sees them as undefined.
+
+Placing a reference on the same line as a parameter also causes an error with the merge module in YAML, so if you do this:
+
+```
+...
+   VpcId: Ref: myVPC
+...
+```
+
+you will get an error during the merge.  Make your references like so:
+
+```
+...
+  VpcId:
+    Ref: myVPC
+...
+```
+
 ## Setting up your project
 Change to the newly cloned directory and from the top level install gulp, gulp-merge-json and gulp-yaml-merge modules to the local directory via npm.
 
@@ -53,3 +74,13 @@ gulp yaml
 ```
 
 in the top-level directory, depending on the format you prefer to write your templates in.  When that completes, you should have a fully baked cloudformation template that you can upload to s3, use with the awscli, or paste into the cloudformation console to create your stack.
+
+### Validate your template
+
+The gulp merge libraries will usually throw an error if there is some syntax problems with your partial files.  However, they can't detect certain cloudformation specific issues with respect to syntax and dependency checking.  Use the awscli tool to validate your template before creating your stack.  
+
+```
+aws cloudformation validate-template --template-body file://dist/example-template.yaml
+```
+
+If you are using the web interface to launch your stack, it will also perform validation on the template when you upload it. 

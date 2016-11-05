@@ -1,0 +1,13 @@
+Resources:
+  mySecurityGroup:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: Allow ssh to instanceSecurityGroup
+      VpcId:
+        Ref: myVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 
+            Ref: sshAuthorizedIPs

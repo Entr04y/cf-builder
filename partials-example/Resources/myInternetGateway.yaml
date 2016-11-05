@@ -1,0 +1,12 @@
+Resources:
+  myInternetGateway:
+    Type: "AWS::EC2::InternetGateway"
+
+  # Attach the above gateway to the vpc
+  internetGatewayAttach:
+    Type: "AWS::EC2::VPCGatewayAttachment"
+    Properties:
+      InternetGatewayId:
+        Ref: myInternetGateway
+      VpcId:
+        Ref: myVPC

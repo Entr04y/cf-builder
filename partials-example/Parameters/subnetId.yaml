@@ -1,4 +1,0 @@
-Parameters:
-  mySubnetId:
-    Description: Subnet to launch instance instance
-    Type: "List<AWS::EC2::Subnet::Id>"

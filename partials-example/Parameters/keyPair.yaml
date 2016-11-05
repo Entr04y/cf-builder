@@ -1,4 +1,4 @@
 Parameters:
-  MyKeyPair:
+  myKeyPair:
     Description: Name of existing keypair to assign to instance
     Type: "AWS::EC2::KeyPair::KeyName"

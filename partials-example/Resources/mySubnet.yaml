@@ -1,0 +1,16 @@
+Resources:
+  mySubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.0.0.0/24
+      MapPublicIpOnLaunch: true
+      VpcId:
+        Ref: myVPC
+
+  mySubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: myMainRouteTable
+      SubnetId:
+        Ref: mySubnet

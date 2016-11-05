@@ -1,0 +1,13 @@
+Resources: 
+  myEC2Instance: 
+    Type: "AWS::EC2::Instance"
+    Properties: 
+      ImageId: 
+        "Fn::FindInMap": [RegionMap, Ref: "AWS::Region", 64]
+      InstanceType: t2.micro
+      SubnetId:
+        Ref: mySubnet
+      KeyName:
+        Ref: myKeyPair
+      SecurityGroupIds: [ Ref: mySecurityGroup ]
+  

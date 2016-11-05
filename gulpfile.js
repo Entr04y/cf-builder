@@ -4,7 +4,6 @@ var gulp = require('gulp')
 var jsonMerge = require('gulp-merge-json');
 var yamlMerge = require('gulp-yaml-merge')
 
-
 // Task to create example template
 gulp.task('example', function() {
 	gulp.src(['Base.yaml', 'partials-example/**/*.yaml'])

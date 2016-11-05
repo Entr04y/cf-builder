@@ -1,0 +1,15 @@
+Mappings:
+  RegionMap: 
+    us-east-1: 
+      "64": "ami-b73b63a0"
+    us-east-2:
+      "64": "ami-58277d3d"
+    us-west-1: 
+      "64": "ami-23e8a343"
+    us-west-2:
+      "64": "ami-5ec1673e"
+    eu-west-1: 
+      "64": "ami-9398d3e0"
+    eu-east-1:
+      "64": "ami-f9619996"
+  

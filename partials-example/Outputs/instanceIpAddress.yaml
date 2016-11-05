@@ -1,0 +1,10 @@
+Outputs:
+  instanceIpAddress:
+    Description: The Public IP of the instance
+    Value:
+      Fn::GetAtt: [ myEC2Instance, PublicIp ]
+
+  instanceDnsName:
+    Description: The public DNS for the instance
+    Value:
+      "Fn::GetAtt": [ myEC2Instance, PublicDnsName ]

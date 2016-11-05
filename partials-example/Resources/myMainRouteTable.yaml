@@ -1,0 +1,16 @@
+Resources:
+  myMainRouteTable:
+    Type: "AWS::EC2::RouteTable"
+    Properties:
+      VpcId: 
+        Ref: myVPC
+
+  # I like to keep the associated routes in the same file to avoid confusion
+  myMainDefaultRoute:
+    Type: "AWS::EC2::Route"
+    Properties:
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: 
+        Ref: myInternetGateway
+      RouteTableId:
+        Ref: myMainRouteTable
